@@ -23,14 +23,14 @@
 
 <body>
 <%
- String tableName = request.getParameter("table");
- String productId = request.getParameter("id");
- Class.forName("com.mysql.jdbc.Driver");
-	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/products","root","11me10050");
-	String query = "select * from " + tableName + " where productId = '"+productId+"'" ;
-	Statement state = connection.createStatement();
-	ResultSet rs = state.executeQuery(query);
-	rs.next();
+ //String tableName = request.getParameter("table");
+ //String productId = request.getParameter("id");
+ //Class.forName("com.mysql.jdbc.Driver");
+	//Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/products","root","11me10050");
+	//String query = "select * from " + tableName + " where productId = '"+productId+"'" ;
+	//Statement state = connection.createStatement();
+	//ResultSet rs = state.executeQuery(query);
+	//rs.next();
 	//String gender = null;
 	//try{ gender= rs.getString("gender");}
 	//catch(SQLException ex){
@@ -47,7 +47,10 @@
               <span><a href="#">LogOut</a></span>
           </div>
     </div>
-    <div class = "container-fluid">
+    <div class = "container-fluid" style="
+    width: 100%;
+    background-color: #E99523;
+">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
           <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
           <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
@@ -59,10 +62,10 @@
   </div>
     <div class="container product-description-container">
         <div class="product-description_carousel col-sm-8">
-           <img src = "<%=rs.getString("imgsrc")%>" alt = "product"/>
+           <img src = "${product.get("imgsrc")}" alt = "product"/>
         </div>
         <div class="product_details_sidebar col-sm-4">
-            <h4 id="product-title"><%=rs.getString("name") %></h4>
+            <h4 id="product-title">${product.get("name")}</h4>
             <div class="options col-sm-10 no-padding">
                 <div class="review">
                     <div class="product_rating col-xs-12">
@@ -85,8 +88,8 @@
                 <div class="price">
                     <div class="col-xs-12">
                             <h3 class="text-primary">Price</h3>
-                            <p>MRP: <del style="color:red">Rs.<%=rs.getDouble("mrp") %></del></p>
-                            <p>Selling Price: <span style="color:green;font-size:25px">Rs.<%=rs.getString("selling_price") %></span></p>
+                            <p>MRP: <del style="color:red">Rs.${product.get("mrp")}</del></p>
+                            <p>Selling Price: <span style="color:green;font-size:25px">Rs.${product.get("selling_price")}</span></p>
                         </div>
                 </div>
                 <div class="pincode">
@@ -111,11 +114,11 @@
                 <tbody>
                   <tr>
                     <td>Brand</td>
-                    <td id="product-brand"><%=rs.getString("brand") %></td>
+                    <td id="product-brand">${product.get("brand")}</td>
                   </tr>
                   <tr>
                     <td >Ideal For</td>
-                    <td id="product-gender"><%=rs.getString("gender")%></td>
+                    <td id="product-gender">${product.get("gender")}</td>
                   </tr>
                   <tr>
                     <td>Fabric</td>

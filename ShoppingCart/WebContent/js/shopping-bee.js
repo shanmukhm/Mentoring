@@ -517,7 +517,7 @@ $(document).ready(function(){
 	//Appending data to catalog 
 	var toAppend = '';
 	for(var key in electronics) {
-		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+electronics[key]["type"]+':'+electronics[key]["pricerange"]+':'+electronics[key]["brand"]+'" id="'+electronics[key]["productId"]+'"><a href="product-description.jsp?table=electronics&id='+electronics[key]["productId"]+'"><figure><img src ="'+electronics[key]["imgsrc"]+'"/><figcaption><strong>'+electronics[key]["name"]+'</strong></figcaption><div class="product-price">\
+		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+electronics[key]["type"]+':'+electronics[key]["pricerange"]+':'+electronics[key]["brand"]+'" id="'+electronics[key]["productId"]+'"><a href="../ProductDescription?table=electronics&id='+electronics[key]["productId"]+'"><figure><img src ="'+electronics[key]["imgsrc"]+'"/><figcaption><strong>'+electronics[key]["name"]+'</strong></figcaption><div class="product-price">\
                         <p class="text-primary"><del style="color:red">Rs.'+electronics[key]["mrp"]+'</del> Rs.'+electronics[key]["selling_price"]+'</p></div></figure></a></div></div>';
                         
 	}
@@ -525,14 +525,14 @@ $(document).ready(function(){
 	var toAppend = '';
 	for(var key in books) {
 		var keys = Object.keys(books[key]["filters"]);
-		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+books[key]["filters"][keys[0]]+':'+books[key]["filters"][keys[1]]+':'+books[key]["filters"][keys[2]]+'" id="'+books[key]["productId"]+'"><a href="product-description.jsp?table=books&id='+books[key]["productId"]+'"><figure><img src ="'+books[key]["imgsrc"]+'"/><figcaption><strong>'+books[key]["name"]+'</strong></figcaption><div class="product-price">\
+		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+books[key]["filters"][keys[0]]+':'+books[key]["filters"][keys[1]]+':'+books[key]["filters"][keys[2]]+'" id="'+books[key]["productId"]+'"><a href="../ProductDescription?table=books&id='+books[key]["productId"]+'"><figure><img src ="'+books[key]["imgsrc"]+'"/><figcaption><strong>'+books[key]["name"]+'</strong></figcaption><div class="product-price">\
                         <p class="text-primary"><del style="color:red">Rs.'+books[key]["mrp"]+'</del> Rs.'+books[key]["selling_price"]+'</p></div></figure></a></div></div>';
 	}
 	$(".books-catalog").append(toAppend);
 	var toAppend = '';
 	for(var key in clothing) {
 		var keys = Object.keys(clothing[key]["filters"]);
-		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+clothing[key]["filters"][keys[0]]+':'+clothing[key]["filters"][keys[1]]+':'+clothing[key]["filters"][keys[2]]+'" id="'+clothing[key]["productId"]+'"><a href="product-description.jsp?table=clothing&id='+clothing[key]["productId"]+'"><figure><img src ="'+clothing[key]["imgsrc"]+'"/><figcaption><strong>'+clothing[key]["name"]+'</strong></figcaption><div class="product-price">\
+		toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+clothing[key]["filters"][keys[0]]+':'+clothing[key]["filters"][keys[1]]+':'+clothing[key]["filters"][keys[2]]+'" id="'+clothing[key]["productId"]+'"><a href="../ProductDescription?table=clothing&id='+key+'"><figure><img src ="'+clothing[key]["imgsrc"]+'"/><figcaption><strong>'+clothing[key]["name"]+'</strong></figcaption><div class="product-price">\
 		                        <p class="text-primary"><del style="color:red">Rs.'+clothing[key]["mrp"]+'</del> Rs.'+clothing[key]["selling_price"]+'</p></div></figure></a></div></div>';
 	}
 	$(".clothing-catalog").append(toAppend);
@@ -542,7 +542,7 @@ $(document).ready(function(){
 	$.getJSON('http://localhost:8080/ShoppingCart/FetchJSON',function(footware) {
 		console.log("nothing");
 		for(var key in footware) {
-			toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+footware[key]["gender"]+':'+footware[key]["pricerange"]+':'+footware[key]["brand"]+'" id="'+footware[key]["productId"]+'"><a href="product-description.jsp?table=footware&id='+footware[key]["productId"]+'"><figure><img src ="'+footware[key]["imgsrc"]+'"/><figcaption><strong>'+footware[key]["name"]+'</strong></figcaption><div class="product-price">\
+			toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+footware[key]["gender"]+':'+footware[key]["pricerange"]+':'+footware[key]["brand"]+'" id="'+footware[key]["productId"]+'"><a href="../ProductDescription?table=footware&id='+footware[key]["productId"]+'"><figure><img src ="'+footware[key]["imgsrc"]+'"/><figcaption><strong>'+footware[key]["name"]+'</strong></figcaption><div class="product-price">\
 	                        <p class="text-primary"><del style="color:red">Rs.'+footware[key]["mrp"]+'</del> Rs.'+footware[key]["selling_price"]+'</p></div></figure></a></div></div>';
 		}
 		$(".footware-catalog").append(toAppend);    
