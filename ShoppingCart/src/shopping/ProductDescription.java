@@ -22,9 +22,8 @@ public class ProductDescription extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		 String tableName = request.getParameter("table");
+		 String tableName = (String)request.getParameter("table");
 		 String productId = request.getParameter("id");
-		 System.out.println(tableName);
 		 try{
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/products","root","11me10050");
@@ -44,11 +43,15 @@ public class ProductDescription extends HttpServlet {
 					 productData.put(column_name, rs.getString(column_name));
 			           }
 			 }
-			 if(tableName == "books"){
+			 if(tableName.equals("books")||tableName.equals("electronics")){
+				 System.out.println("vvvbnb");
 				 productData.put("gender", "All");
 			 }
+			 String t = "b";
+			 if(t == "b"){
+			 System.out.println(tableName == "books");
+			 }
 			 HttpSession session = request.getSession();
-			 System.out.println(productData.get("mrp"));
 			 session.setAttribute("product", productData);
 			 response.sendRedirect("html/product-description.jsp");
 		 }

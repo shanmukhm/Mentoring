@@ -47,10 +47,7 @@
               <span><a href="#">LogOut</a></span>
           </div>
     </div>
-    <div class = "container-fluid" style="
-    width: 100%;
-    background-color: #E99523;
-">
+    <div class = "container-fluid categories">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
           <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
           <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
