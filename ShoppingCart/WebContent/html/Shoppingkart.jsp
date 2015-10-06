@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Shopping Bee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
+    <!-- Add the new slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" type="text/css" href="../css/shopping-kart.css">
+</head>
+<body>
+<div class="header">
+  	<div class="container topbar">
+  		<img src="../images/e-shop.png" height="80px">
+  		<span id="site-title">Shopping Bee</span>
+          <div id="cart">
+          	  <span><a>Hello ${username}</a></span>
+              <span><a href="login.jsp">Sign In</a></span>
+              <span><a href="cart.html">MyCart</a></span>
+              <span><a href="../logout">LogOut</a></span>
+          </div>
+  	</div>
+    <div class = "container navmenu">
+        <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
+          <li role="presentation" class="active"><a href="Shoppingkart.jsp">Home</a></li>
+          <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
+          <li role="presentation"><a href="books.html">Books</a></li>
+          <li role="presentation"><a href="clothing.html">Clothing</a></li>
+          <li role="presentation"><a href="footware.html">Footware</a></li>
+        </ul>
+    </div>
+  </div>
+    <div class="container" style="width:100%">
+        <div class="row sb-content">
+            <!-- Filter list-->
+            <div class="col-xs-2">
+                
+            </div>
+            <div class="col-xs-8 sb-main-content">
+                  <div class="deal content-tab">
+                      <h2>Deal of the day</h2>
+                      <div class="deal-carousel">
+                      </div>
+                  </div>
+                  <div class="electronics content-tab">
+                      <h2>Electronics</h2>
+                      <div class="electronics-carousel">
+                      </div>
+                  </div>
+                  <div class="clothing content-tab">
+                      <h2>Clothing</h2>
+                      <div class="clothing-carousel">
+                      </div>
+                  </div>
+                  <div class="books content-tab">
+                      <h2>Books</h2>
+                      <div class="books-carousel">
+                      </div>
+                  </div>
+                  <div class="footware content-tab">
+                      <h2>Footware</h2>
+                      <div class="footware-carousel">
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
+    <script type="text/javascript" src="../js/shopping-bee.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@media (min-width: 1200px) {
+
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px){
+    .outerCarousel_images .carousel-inner .item{
+        padding-top: 25px;
+        width: 21.9em;               /*height and width of item(pic+ratings) */
+        height:21.43em;
+    }
+   .outerCarousel_images .carousel-inner .item .image{
+        width: 21.4em;                   /*height and width of actual picture Change this to include gap between items*/
+        height: 7.43em;
+    }
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px){
+body{
+    font-size:10px;
+}
+}
+ /* Responsible for gap between upper bar and photo border */
+.outerCarousel_images {
+margin: 0.7143em auto;
+padding: 1.57em 0px 1.57em 0px;
+ }
+/* height and width of item(pic+ratings) */
+.carousel_image {
+padding-top: 25px;
+padding-bottom:2px;
+/*height: 21.43em;*/
+max-width: 90%;
+ }
+/* height and width of actual picture Change this to include gap between items*/
+ .image {
+ max-width: 100%;
+ max-height: 100%;
+ }
+.slick-next:before {
+ content: url(../images/right-enable.png);
+ }
+ .slick-prev:before {
+content: url(../images/left-enable.png);
+ }
+
+ .slick-next,
+ .slick-prev {
+     height: 40px;
+     width: 20px;
+ }
+
+ .outerCarousel_images figcaption {
+     text-align: center;
+ }
+
+.outerCarousel_images .product_rating  {
+     padding:1em 0em 0em 1em;
+ }
+  .product_rating img {
+     display: inline-block;
+     margin-right: 0.2em;
+}
+
+ .outerCarousel_images .product_price {
+  float: right;
+  font-size: 1.5em;
+  color: #3D86BB;
+  position: relative;
+  left: -4%;
+  top: -0.2em;
+
+ }
+ /* on hover provide border to figure element */
+ .outerCarousel_images div:hover >.innerCarousel .active .carousel_image {
+     border-style: solid;
+     border-color: red;
+     -webkit-transition: border 0.2s ease-out;
+     -moz-transition: border 0.2s ease-out;
+     -o-transition: border 0.2s ease-out;
+     transition: border 0.25s ease-out;
+ }
+
+ .outerCarousel_images div:hover >.tryOn {
+     opacity: 1;
+ }
+ .innerCarousel .carousel-indicators {
+     left: 0;
+     bottom: 85px;
+     margin-left: 20%;
+ }
+
+ .innerCarousel .carousel-indicators li {
+     height: 15px;
+     width: 15px;
+     border: 0.1px solid black;
+ }
+
+ .innerCarousel .carousel-indicators .active {
+     height: 17px;
+     width: 17px;
+ }
+
+ .innerCarousel .carousel_image figcaption {
+     padding-top: 80px;
+ }

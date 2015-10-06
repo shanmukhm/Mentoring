@@ -1,0 +1,251 @@
+@media (min-width: 1200px) {
+
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px){
+    .outerCarousel_images .carousel-inner .item{
+        padding-top: 25px;
+        width: 21.9em;               /*height and width of item(pic+ratings) */
+        height:21.43em;
+    }
+   .outerCarousel_images .carousel-inner .item .image{
+        width: 21.4em;                   /*height and width of actual picture Change this to include gap between items*/
+        height: 7.43em;
+    }
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px){
+body{
+    font-size:10px;
+}
+}
+ /* Responsible for gap between upper bar and photo border */
+.outerCarousel_images {
+margin: 0.7143em auto;
+padding: 1.57em 0px 1.57em 0px;
+ }
+/* height and width of item(pic+ratings) */
+.carousel_image {
+padding-top: 25px;
+padding-bottom:2px;
+/*height: 21.43em;*/
+max-width: 90%;
+ }
+/* height and width of actual picture Change this to include gap between items*/
+ .image {
+ max-width: 100%;
+ max-height: 100%;
+ }
+.slick-next:before {
+ content: url(../images/right-enable.png);
+ }
+ .slick-prev:before {
+content: url(../images/left-enable.png);
+ }
+
+ .slick-next,
+ .slick-prev {
+     height: 40px;
+     width: 20px;
+ }
+
+ .outerCarousel_images figcaption {
+     text-align: center;
+ }
+
+.outerCarousel_images .product_rating  {
+     padding:1em 0em 0em 1em;
+ }
+  .product_rating img {
+     display: inline-block;
+     margin-right: 0.2em;
+}
+
+ .outerCarousel_images .product_price {
+  float: right;
+  font-size: 1.5em;
+  color: #3D86BB;
+  position: relative;
+  left: -4%;
+  top: -0.2em;
+
+ }
+ /* on hover provide border to figure element */
+ .outerCarousel_images div:hover >.innerCarousel .active .carousel_image {
+     border-style: solid;
+     border-color: red;
+     -webkit-transition: border 0.2s ease-out;
+     -moz-transition: border 0.2s ease-out;
+     -o-transition: border 0.2s ease-out;
+     transition: border 0.25s ease-out;
+ }
+
+ .outerCarousel_images div:hover >.tryOn {
+     opacity: 1;
+ }
+ .innerCarousel .carousel-indicators {
+     left: 0;
+     bottom: 85px;
+     margin-left: 20%;
+ }
+
+ .innerCarousel .carousel-indicators li {
+     height: 15px;
+     width: 15px;
+     border: 0.1px solid black;
+ }
+
+ .innerCarousel .carousel-indicators .active {
+     height: 17px;
+     width: 17px;
+ }
+
+ .innerCarousel .carousel_image figcaption {
+     padding-top: 80px;
+ }
+
+.product-description-container{
+  padding-top: 10px;
+}
+
+/************************************CAROUSEL*****************************************/
+
+.article-slide .carousel-inner > .item > img,
+ .article-slide .carousel-inner > .item > a > img {
+      height: 350px;
+      margin: auto;
+ }
+.article-slide .glyphicon-chevron-left::before {
+    content: url(../images/left-disable.png);
+}
+
+.article-slide .glyphicon-chevron-left.special::before {
+    content: url(../images/left-enable.png);
+}
+.article-slide .glyphicon-chevron-right::before {
+    content: url(../images/right-enable.png);
+}
+.article-slide .glyphicon-chevron-right.special::before {
+    content: url(../images/right-disable.png);
+}
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    margin-left: 100px;
+    margin-top: 50px;
+    position: static;
+    width: 80%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 60px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    max-height: 100px;
+    left: 0;
+    max-width: 60px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
+
+.article-slide .carousel-control {
+  position: static;
+}
+
+.article-slide .carousel-control.left{
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.article-slide .carousel-control .icon-prev,.article-slide .carousel-control .glyphicon-chevron-left{
+  left: 10%;
+}
+
+.article-slide .carousel-control.right{
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.article-slide .carousel-control .icon-next,.article-slide .carousel-control .glyphicon-chevron-right{
+  right: 10%;
+}
+
+/*******************************SIDEBAR*****************************/
+.product_details_sidebar {
+   margin: 0 0 0 auto ;
+   border-left: 1px solid;
+   padding-bottom:30px
+}
+
+
+/* Reviews */
+.review .product_rating{
+    border-top : 1px solid;
+    padding:15px 0;
+}
+
+.review .product_rating img{
+  position: relative;
+  bottom:1.9px;
+}
+
+/* Stock Availability and Deleviery */
+  .stock_delivery {
+    font-size : 13.2px;
+  }
+ .stock_delivery .availability{
+   padding-right: 70px;
+
+ }
+
+  .availability  .instock{
+    color:green;
+  }
+
+ .stock_delivery .product_availability{
+    padding-bottom:15px;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+ }
+
+/*Pincode */
+ .pin{
+    margin: 15px 0px;
+ }
+
+.pincode .form-control , .pincode .btn.btn-default{
+            border-radius: unset;
+ }
+
+ .pincode .form-control::-moz-placeholder {
+  font-style: italic;
+
+}
+
+
+
+
+
+
