@@ -457,11 +457,21 @@ var books = {
 		                }
 };
 $(document).ready(function(){
-	 // $('#pills-first a').hover(function (e) {
-  //         e.preventDefault()
-  //         $(this).tab('show')
-  //      });
-	//Appending Deal of the data from JSON
+	$.ajax({
+		url: "http://localhost:8080/ShoppingCart/SignInDisplay", 
+		async:true, 
+		success: function(isLoggedin){
+			console.log(isLoggedin.trim());
+			if(isLoggedin.trim() === "yes"){
+				$("#signin").hide();
+				$("#logout,#welcome").show();
+			}
+			else{
+				$("#signin").show();
+				$("#logout,#welcome").hide();
+			}
+		}
+	});
 	for(var key in dealOfTheDay) {
 		$(".deal-carousel").append('<div class="carousel-item text-center"><figure><img src ="'+dealOfTheDay[key]["imgsrc"]+'"/><figcaption><strong>'+dealOfTheDay[key]["name"]+'</strong></figcaption><div class="product-price">\
                         <p class="text-primary"><del style="color:red">Rs.'+dealOfTheDay[key]["mrp"]+'</del> Rs.'+dealOfTheDay[key]["selling_price"]+'</p></div></figure></div>');
@@ -540,7 +550,6 @@ $(document).ready(function(){
 	
                         
 	$.getJSON('http://localhost:8080/ShoppingCart/FetchJSON',function(footware) {
-		console.log("nothing");
 		for(var key in footware) {
 			toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+footware[key]["gender"]+':'+footware[key]["pricerange"]+':'+footware[key]["brand"]+'" id="'+footware[key]["productId"]+'"><a href="../ProductDescription?table=footware&id='+footware[key]["productId"]+'"><figure><img src ="'+footware[key]["imgsrc"]+'"/><figcaption><strong>'+footware[key]["name"]+'</strong></figcaption><div class="product-price">\
 	                        <p class="text-primary"><del style="color:red">Rs.'+footware[key]["mrp"]+'</del> Rs.'+footware[key]["selling_price"]+'</p></div></figure></a></div></div>';

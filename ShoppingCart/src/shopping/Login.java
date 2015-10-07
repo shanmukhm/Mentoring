@@ -23,9 +23,9 @@ public class Login extends HttpServlet {
 		String pass= (String)request.getParameter("password");
 		if(UserValidation.validate(name, pass) && name != null){
 			HttpSession session = request.getSession();
-			System.out.println(session.getId());
 			session.setAttribute("username", name);
 			session.setAttribute("password", pass);
+			session.setAttribute("isLoggedin", "true");
 			session.setAttribute("error", "");
 			response.sendRedirect("./html/Shoppingkart.jsp");
 //			RequestDispatcher rd = request.getRequestDispatcher("/html/Shoppingkart.jsp");

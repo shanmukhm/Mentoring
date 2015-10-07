@@ -20,20 +20,20 @@
   		<a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
-          	  <span><a>Hello ${username}</a></span>
-              <span><a href="login.jsp">Sign In</a></span>
-              <span><a href="cart.html">MyCart</a></span>
-              <span><a href="../logout">LogOut</a></span>
+          	  <span id="welcome"><a>Hello ${username}</a></span>
+              <span id="signin"><a href="login.jsp">Sign In</a></span>
+              <span><a href="cart.jsp">MyCart</a></span>
+              <span id="logout"><a href="../logout">LogOut</a></span>
           </div>
   	</div>
     <div class = "container navmenu">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
-          <li role="presentation" class="active"><a href="Shoppingkart.jsp">Home</a></li>
-          <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
-          <li role="presentation"><a href="books.html">Books</a></li>
-          <li role="presentation"><a href="clothing.html">Clothing</a></li>
-          <li role="presentation"><a href="footware.html">Footware</a></li>
-        </ul>
+              <li role="presentation" class="active"><a href="Shoppingkart.jsp">Home</a></li>
+              <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
+              <li role="presentation"><a href="books.jsp">Books</a></li>
+              <li role="presentation"><a href="clothing.jsp">Clothing</a></li>
+              <li role="presentation"><a href="footware.jsp">Footware</a></li>
+            </ul>
     </div>
   </div>
     <div class="container" style="width:100%">

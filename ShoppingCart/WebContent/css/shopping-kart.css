@@ -60,6 +60,15 @@
 	color: rgb(233, 149, 35);
 	background-color: rgb(60, 58, 58);
 }
+.filters{
+	padding-top: 10px;
+}
+.filters > ul{
+	border: 1px solid rgb(60, 58, 58);
+}
+.filters > ul > li > h4 {
+	color: rgb(233, 149, 35);
+}
 .slick-next::before, .slick-prev::before {
     color: #000;
     }

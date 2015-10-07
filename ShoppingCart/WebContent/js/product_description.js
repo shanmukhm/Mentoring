@@ -373,9 +373,21 @@ var books = {
                         }
 };
 $(document).ready(function() {
-    // var retrievedObject = localStorage.getItem('cata_category');
-    // var product_selected = JSON.parse(retrievedObject);
-    // productDescription(JSON.parse(retrievedObject));
+	$.ajax({
+		url: "http://localhost:8080/ShoppingCart/SignInDisplay", 
+		async:true, 
+		success: function(isLoggedin){
+			console.log(isLoggedin.trim());
+			if(isLoggedin.trim() === "yes"){
+				$("#signin").hide();
+				$("#logout,#welcome").show();
+			}
+			else{
+				$("#signin").show();
+				$("#logout,#welcome").hide();
+			}
+		}
+	});
     var query = window.location.search.substring(1);
     var pair = query.split("=")[1];
 

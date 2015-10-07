@@ -25,9 +25,9 @@
   		<a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
-              <span><a href="login.jsp">Sign In</a></span>
-              <span><a href="cart.html">MyCart</a></span>
-              <span><a href="../logout">LogOut</a></span>
+              <span id="signin"><a href="login.jsp">Sign In</a></span>
+              <span><a href="cart.jsp">MyCart</a></span>
+              <span id="logout"><a href="../logout">LogOut</a></span>
           </div>
   	</div>
   </div>
