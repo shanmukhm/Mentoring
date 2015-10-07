@@ -17,7 +17,7 @@
 <body>
     <div class="header">
         <div class="container topbar">
-            <img src="../images/e-shop.png" height="80px">
+            <a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
             <span id="site-title">Shopping Bee</span>
               <div id="cart">
                   <span id = "signin"><a data-toggle="modal" data-target="#login-modal">Sign In</a></span>
@@ -27,7 +27,7 @@
         </div>
         <div class = "container-fluid">
             <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
-              <li role="presentation"><a href="Shoppingkart.html">Home</a></li>
+              <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
               <li role="presentation" class="active"><a href="electronics.jsp">Electronics</a></li>
               <li role="presentation"><a href="books.html">Books</a></li>
               <li role="presentation"><a href="clothing.html">Clothing</a></li>

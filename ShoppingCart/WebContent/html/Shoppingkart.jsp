@@ -17,7 +17,7 @@
 <body>
 <div class="header">
   	<div class="container topbar">
-  		<img src="../images/e-shop.png" height="80px">
+  		<a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
           	  <span><a>Hello ${username}</a></span>
