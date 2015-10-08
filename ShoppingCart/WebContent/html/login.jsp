@@ -30,6 +30,15 @@
               <span id="logout"><a href="../logout">LogOut</a></span>
           </div>
   	</div>
+  	 <div class = "container-fluid categories">
+        <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
+              <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
+              <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
+              <li role="presentation"><a href="books.jsp">Books</a></li>
+              <li role="presentation"><a href="clothing.jsp">Clothing</a></li>
+              <li role="presentation"><a href="footware.jsp">Footware</a></li>
+            </ul>
+    </div>
   </div>
 <div class="container">
     <div><p class="text-primary imp-text">Enter your login details.</p></div>

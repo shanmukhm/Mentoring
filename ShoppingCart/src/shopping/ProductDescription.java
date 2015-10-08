@@ -44,12 +44,7 @@ public class ProductDescription extends HttpServlet {
 			           }
 			 }
 			 if(tableName.equals("books")||tableName.equals("electronics")){
-				 System.out.println("vvvbnb");
 				 productData.put("gender", "All");
-			 }
-			 String t = "b";
-			 if(t == "b"){
-			 System.out.println(tableName == "books");
 			 }
 			 HttpSession session = request.getSession();
 			 session.setAttribute("product", productData);

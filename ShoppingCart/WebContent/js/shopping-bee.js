@@ -461,7 +461,6 @@ $(document).ready(function(){
 		url: "http://localhost:8080/ShoppingCart/SignInDisplay", 
 		async:true, 
 		success: function(isLoggedin){
-			console.log(isLoggedin.trim());
 			if(isLoggedin.trim() === "yes"){
 				$("#signin").hide();
 				$("#logout,#welcome").show();

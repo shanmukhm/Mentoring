@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="cart.html"><button class="btn btn-primary btn-lg" id="addtocart">Add to Cart</button></a>
+                <a href="../AddToCart"><button class="btn btn-primary btn-lg" id="addtocart">Add to Cart</button></a>
             </div>
         </div>
     </div>
