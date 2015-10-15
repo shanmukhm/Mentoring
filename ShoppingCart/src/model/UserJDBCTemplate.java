@@ -8,23 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
 public class UserJDBCTemplate {
 	private DataSource dataSource;
 	private JdbcTemplate userTemplate;
 	private UserMapper userMapper;
 	
-	@Autowired
 	public void setUserTemplate(JdbcTemplate userTemplate) {
 		this.userTemplate = userTemplate;
 	}
 	
-	@Autowired
 	public void setUserMapper(UserMapper userMapper){
 		this.userMapper = userMapper;
 	}
 	
-	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		this.userTemplate = new JdbcTemplate(dataSource);

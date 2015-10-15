@@ -14,7 +14,7 @@ import org.json.JSONObject;
 /**
  * Servlet implementation class AddToCart
  */
-@WebServlet("/AddToCart")
+//@WebServlet("/AddToCart")
 public class AddToCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

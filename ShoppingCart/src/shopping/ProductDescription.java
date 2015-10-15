@@ -16,7 +16,7 @@ import java.util.*;
 /**
  * Servlet implementation class ProductDescription
  */
-@WebServlet("/ProductDescription")
+//@WebServlet("/ProductDescription")
 public class ProductDescription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

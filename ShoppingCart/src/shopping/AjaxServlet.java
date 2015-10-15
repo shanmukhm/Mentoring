@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AjaxServlet
  */
-@WebServlet("/AjaxServlet")
+//@WebServlet("/AjaxServlet")
 public class AjaxServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

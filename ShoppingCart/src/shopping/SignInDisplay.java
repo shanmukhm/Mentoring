@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SignInDisplay
  */
-@WebServlet("/SignInDisplay")
+//@WebServlet("/SignInDisplay")
 public class SignInDisplay extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

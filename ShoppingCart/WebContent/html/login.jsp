@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,17 +13,18 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/shopping-kart.css">
+<link rel="stylesheet" type="text/css" href="css/shopping-kart.css">
 </head>
 <body>
 <%
 	if(session.getAttribute("username") != null){
 		response.sendRedirect("Shoppingkart.jsp");
 	}
+	model.User command = new model.User();
 %>
 <div class="header">
   	<div class="container topbar">
-  		<a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
+  		<a href="Shoppingkart.jsp"><img src="images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
               <span id="signin"><a href="login.jsp">Sign In</a></span>
@@ -42,21 +44,21 @@
   </div>
 <div class="container">
     <div><p class="text-primary imp-text">Enter your login details.</p></div>
-	<form role="form" action="../login" method="post">
-  <div class="form-group">
-    <label for="name">User Name:</label>
-    <input type="name" class="form-control login-input" id="name" name="name">
-  </div>
-  <div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" class="form-control login-input" id="pwd" name="password">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
+	<form:form method="POST" action="/ShoppingCart/login.do">
+  		<div class="form-group">
+    	<label for="name">User Name:</label>
+    	<form:input path="username" class="form-control login-input" id="name" name="name" required="required"/>
+  	</div>
+  		<div class="form-group">
+    	<label for="password">Password:</label>
+    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" required="required"/>
+  	</div>
+  		<div class="checkbox">
+    	<label><input type="checkbox"> Remember me</label>
+  	</div>
   <div><p class="text-danger">${error}</p></div>
   <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</form:form>
 </div>
 </body>
 </html>

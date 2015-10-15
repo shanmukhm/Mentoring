@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FetchJSON
  */
-@WebServlet("/FetchJSON")
+//@WebServlet("/FetchJSON")
 public class FetchJSON extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
