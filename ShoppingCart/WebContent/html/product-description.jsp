@@ -86,7 +86,7 @@
                     <div class="col-xs-12">
                             <h3 class="text-primary">Price</h3>
                             <p>MRP: <del style="color:red">Rs.${product.get("mrp")}</del></p>
-                            <p>Selling Price: <span style="color:green;font-size:25px">Rs.${product.get("selling_price")}</span></p>
+                            <p>Selling Price: <span style="color:green;font-size:25px">Rs.${product.get("sellingPrice")}</span></p>
                         </div>
                 </div>
                 <div class="pincode">

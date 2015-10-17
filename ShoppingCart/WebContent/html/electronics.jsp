@@ -68,6 +68,21 @@
     <script type="text/javascript" src="../js/shopping-bee.js"></script>
     <script type="text/javascript">
        //Adding filters to the pages
+       var toAppend = '';
+       $.ajax({
+		url:'../fetchproduct.do',
+		async : true,
+		data : {"category" : "electronics"},
+		success: function(electronics) {
+			console.log(electronics);
+						for(var i=0; i < electronics.length; i++) {
+							toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+electronics[i]["type"]+':'+electronics[i]["pricerange"]+':'+electronics[i]["brand"]+'" id="'+electronics[i]["productId"]+'"><a href="../ProductDescription?category=electronics&id='+electronics[i]["productId"]+'"><figure><img src ="'+electronics[i]["imgsrc"]+'"/><figcaption><strong>'+electronics[i]["name"]+'</strong></figcaption><div class="product-price">\
+					                        <p class="text-primary"><del style="color:red">Rs.'+electronics[i]["mrp"]+'</del> Rs.'+electronics[i]["sellingPrice"]+'</p></div></figure></a></div></div>';
+					                        
+						}
+						$(".electronics-catalog").append(toAppend);    
+			}
+});
         
         $(".filters li > input").change(function(){
           var cat_list_type = [];
