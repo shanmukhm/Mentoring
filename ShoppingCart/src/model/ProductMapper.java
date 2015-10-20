@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProductMapper implements RowMapper<Product>{
-	private int row;
 	@Override
 	public Product mapRow(ResultSet rs,int rowNum) throws SQLException{
 		Product product = new Product();
@@ -18,7 +17,7 @@ public class ProductMapper implements RowMapper<Product>{
 		product.setSellingPrice(rs.getDouble("selling_price"));
 		product.setDelivery(rs.getDouble("delivery"));
 		product.setCategory(rs.getString("category"));
-		product.setProductid(rs.getString("productId"));
+		product.setProductId(rs.getString("productId"));
 		product.setGender(rs.getString("gender"));
 		product.setBrand(rs.getString("brand"));
 		product.setPricerange(rs.getString("pricerange"));

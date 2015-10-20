@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="../AddToCart"><button class="btn btn-primary btn-lg" id="addtocart">Add to Cart</button></a>
+                <button class="btn btn-primary btn-lg" id="addtocart">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -126,10 +126,8 @@
         </div>
    </div>
    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/product_description.js"></script>
 </body>
 

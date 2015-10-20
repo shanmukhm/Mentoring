@@ -32,7 +32,7 @@ public class UserJDBCTemplate {
 //	}
 	
 	public User getUser(String name) {
-		String sql = "select * from users where name = ?";
+		String sql = "select * from users where username = ?";
 		User user = userTemplate.queryForObject(sql, new Object[]{name}, userMapper);
 		return user;
 	}

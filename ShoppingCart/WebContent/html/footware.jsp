@@ -76,7 +76,7 @@
 			success: function(footware) {
 				console.log(footware);
 							for(var i=0; i < footware.length; i++) {
-								toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+footware[i]["gender"]+':'+footware[i]["pricerange"]+':'+footware[i]["brand"]+'" id="'+footware[i]["productid"]+'"><a href="../ProductDescription.do?category=footware&id='+footware[i]["productid"]+'"><figure><img src ="'+footware[i]["imgsrc"]+'"/><figcaption><strong>'+footware[i]["name"]+'</strong></figcaption><div class="product-price">\
+								toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+footware[i]["gender"]+':'+footware[i]["pricerange"]+':'+footware[i]["brand"]+'" id="'+footware[i]["productId"]+'"><a href="../ProductDescription.do?category=footware&id='+footware[i]["productId"]+'"><figure><img src ="'+footware[i]["imgsrc"]+'"/><figcaption><strong>'+footware[i]["name"]+'</strong></figcaption><div class="product-price">\
 						                        <p class="text-primary"><del style="color:red">Rs.'+footware[i]["mrp"]+'</del> Rs.'+footware[i]["sellingPrice"]+'</p></div></figure></a></div></div>';
 							}
 							$(".footware-catalog").append(toAppend);    

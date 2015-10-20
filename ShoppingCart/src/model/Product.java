@@ -7,10 +7,11 @@ public class Product {
 	private Double sellingPrice;
 	private Double delivery;
 	private String category;
-	private String productid;
+	private String productId;
 	private String gender;
 	private String brand;
 	private String pricerange;
+	
 	public String getName() {
 		return name;
 	}
@@ -47,11 +48,11 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getProductid() {
-		return productid;
+	public String getProductId() {
+		return productId;
 	}
-	public void setProductid(String productid) {
-		this.productid = productid;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 	public String getGender() {
 		return gender;

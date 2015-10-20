@@ -77,7 +77,7 @@
 		success: function(product) {
 			console.log(product);
 						for(var i=0; i < product.length; i++) {
-							toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+product[i]["gender"]+':'+product[i]["pricerange"]+':'+product[i]["brand"]+'" id="'+product[i]["productid"]+'"><a href="../ProductDescription?table=product&id='+product[i]["productId"]+'"><figure><img src ="'+product[i]["imgsrc"]+'"/><figcaption><strong>'+product[i]["name"]+'</strong></figcaption><div class="product-price">\
+							toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+product[i]["gender"]+':'+product[i]["pricerange"]+':'+product[i]["brand"]+'" id="'+product[i]["productId"]+'"><a href="../ProductDescription.do?category=clothing&id='+product[i]["productId"]+'"><figure><img src ="'+product[i]["imgsrc"]+'"/><figcaption><strong>'+product[i]["name"]+'</strong></figcaption><div class="product-price">\
 					                        <p class="text-primary"><del style="color:red">Rs.'+product[i]["mrp"]+'</del> Rs.'+product[i]["sellingPrice"]+'</p></div></figure></a></div></div>';
 						}
 						$(".clothing-catalog").append(toAppend);    

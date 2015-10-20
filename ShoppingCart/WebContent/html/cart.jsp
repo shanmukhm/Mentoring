@@ -16,6 +16,31 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick-theme.min.css">
     <link rel="stylesheet" type="text/css" href="../css/product_desc.css">
     <link rel="stylesheet" type="text/css" href="../css/shopping-kart.css">
+     <!-- <script type="text/javascript">
+    
+    		$.ajax({
+    			url: "/ShoppingCart/SignInDisplay.do", 
+    			async:true, 
+    			success: function(isLoggedin){
+    				console.log(isLoggedin.trim());
+    				if(isLoggedin.trim() === "yes"){
+    					$("#signin").hide();
+    					$("#logout,#welcome").show();
+    				}
+    				else{
+    					$("#signin").show();
+    					$("#logout,#welcome").hide();
+    				}
+    			}
+    		}); 
+    		$.ajax({
+    			url: "/ShoppingCart/getcart.do",
+    			success: function(){
+    				
+    			}
+    		});
+    	
+    </script> -->
 </head>
 
 <body>
@@ -58,12 +83,12 @@
             </tr>
           </thead>
           <tbody>
-           <c:forEach items="${products}" var="product">
-            <tr id='${product.get("productId")}'><td class="product-thumb"><img src='${product.get("imgsrc")}' alt="product"></td>
-                <td>${product.get("name")}</td><td>1</td><td>Rs.${product.get("selling_price")}</td>
-                <td>${product.get("delivery")}</td><td>Total</td><td>
-                <button class="btn btn-primary remove-button">Remove</button></td></tr>
-                </c:forEach>
+           <%-- <c:forEach items="${products}" var="product">
+            <tr ><td class="product-thumb"><img src='${product.getImgsrc()}' alt="product"></td>
+                <td>${product.getName()}</td><td>1</td><td>Rs.${product.getSellingPrice()}</td>
+                <td>${product.getDelivery()}</td><td>Total</td><td>
+                <button id='${product.getProductId()}' class="btn btn-primary remove-button">Remove</button></td></tr>
+                </c:forEach> --%>
           </tbody>
         </table>
       </div>
@@ -71,10 +96,26 @@
     <div class="col-xs-2">
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</body>
+<!-- <script type="text/javascript">
+	$(document).ready(function(){
+		$('.remove-button').click(function(){
+			var id = $(this).attr('id');
+			$.ajax({
+				url : "/ShoppingCart/deleteItem.do",
+				data: {"id" : id},
+				type : "POST",
+				success: function(){
+					console.log("success");
+					location.reload();
+				}
+			});
+		});
+	});
+</script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
-</body>
-
+    <script type="text/javascript" src="../js/cart.js"></script>
 </html>

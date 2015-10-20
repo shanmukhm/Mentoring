@@ -77,7 +77,7 @@
 		success: function(books) {
 			console.log(books);
 						for(var i=0; i < books.length; i++) {
-							toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+books[i]["language"]+':'+books[i]["pricerange"]+'" id="'+books[i]["productId"]+'"><a href="../ProductDescription?category=books&id='+books[i]["productId"]+'"><figure><img src ="'+books[i]["imgsrc"]+'"/><figcaption><strong>'+books[i]["name"]+'</strong></figcaption><div class="product-price">\
+							toAppend += '<div class="col-xs-12 col-sm-4 col-md-4"><div class="catalog-item text-center" data-filters="'+books[i]["language"]+':'+books[i]["pricerange"]+'" id="'+books[i]["productId"]+'"><a href="../ProductDescription.do?category=books&id='+books[i]["productId"]+'"><figure><img src ="'+books[i]["imgsrc"]+'"/><figcaption><strong>'+books[i]["name"]+'</strong></figcaption><div class="product-price">\
 	                        <p class="text-primary"><del style="color:red">Rs.'+books[i]["mrp"]+'</del> Rs.'+books[i]["sellingPrice"]+'</p></div></figure></a></div></div>';
 		}
 						$(".books-catalog").append(toAppend);    
