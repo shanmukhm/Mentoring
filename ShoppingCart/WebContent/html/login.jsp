@@ -24,7 +24,7 @@
 %>
 <div class="header">
   	<div class="container topbar">
-  		<a href="Shoppingkart.jsp"><img src="images/e-shop.png" height="80px"></a>
+  		<a href="/ShoppingCart/html/Shoppingkart.jsp"><img src="images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
               <span id="signin"><a href="login.jsp">Sign In</a></span>
@@ -34,11 +34,11 @@
   	</div>
   	 <div class = "container-fluid categories">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
-              <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
-              <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
-              <li role="presentation"><a href="books.jsp">Books</a></li>
-              <li role="presentation"><a href="clothing.jsp">Clothing</a></li>
-              <li role="presentation"><a href="footware.jsp">Footware</a></li>
+              <li role="presentation"><a href="/ShoppingCart/html/Shoppingkart.jsp">Home</a></li>
+              <li role="presentation"><a href="/ShoppingCart/html/electronics.jsp">Electronics</a></li>
+              <li role="presentation"><a href="/ShoppingCart/html/books.jsp">Books</a></li>
+              <li role="presentation"><a href="/ShoppingCart/html/clothing.jsp">Clothing</a></li>
+              <li role="presentation"><a href="/ShoppingCart/html/footware.jsp">Footware</a></li>
             </ul>
     </div>
   </div>

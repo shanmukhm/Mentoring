@@ -12,6 +12,7 @@ public class CartMapper implements RowMapper<CartDetails>{
 		CartDetails cart = new CartDetails();
 		cart.setCategory(rs.getInt("category"));
 		cart.setProductId(rs.getString("productId"));
+		cart.setQuantity(rs.getInt("quantity"));
 		return cart;
 	}
 }

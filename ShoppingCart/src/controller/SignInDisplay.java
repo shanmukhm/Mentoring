@@ -30,7 +30,10 @@ public class SignInDisplay {
 			out.println("no");
 			
 	}
-
+    @RequestMapping(value = "/isLoggedin.do")
+    public void isLoggedin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	this.signin(request, response);
+    }
 
 
 }

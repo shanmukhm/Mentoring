@@ -3,6 +3,7 @@ package model;
 public class CartDetails {
 	private String productId;
 	private Integer category;
+	private Integer quantity;
 	
 	public String getProductId() {
 		return productId;
@@ -15,5 +16,11 @@ public class CartDetails {
 	}
 	public void setCategory(Integer category) {
 		this.category = category;
+	}
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 }

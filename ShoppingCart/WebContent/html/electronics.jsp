@@ -26,7 +26,7 @@
                   <span id="logout"><a href="../logout">LogOut</a></span>
               </div>
         </div>
-        <div class = "container-fluid">
+        <div class = "container navmenu">
             <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
               <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
               <li role="presentation" class="active"><a href="electronics.jsp">Electronics</a></li>

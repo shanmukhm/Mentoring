@@ -55,8 +55,11 @@ public class ProductJdbcTemplate {
 		String sql = "select productId, category from cart where userid = " + userid;
 		List<CartDetails> cartList = userTemplate.query(sql, cartMapper);
 		List<Product> productsInCart = new ArrayList<>();
+		Product cartItem = null;
 		for(CartDetails cart: cartList){
-			productsInCart.add(this.getProduct(cart.getProductId(), cart.getCategory()));
+			cartItem = this.getProduct(cart.getProductId(), cart.getCategory());
+			cartItem.setQuantity(cart.getQuantity());
+			productsInCart.add(cartItem);
 		}
 		return productsInCart;
 	}

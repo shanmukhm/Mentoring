@@ -11,6 +11,7 @@ public class Product {
 	private String gender;
 	private String brand;
 	private String pricerange;
+	private Integer quantity;
 	
 	public String getName() {
 		return name;
@@ -72,5 +73,22 @@ public class Product {
 	public void setPricerange(String pricerange) {
 		this.pricerange = pricerange;
 	}
-
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+	@Override
+	public int hashCode(){
+		return productId.length();
+	}
+	@Override
+	public boolean equals(Object object){
+		boolean equal = false;
+		Product product = (Product) object;
+		if(object instanceof Product && this.getProductId().equals(product.getProductId()))
+			equal = true;
+		return equal;
+	}
 }

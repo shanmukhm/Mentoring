@@ -1,7 +1,10 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,27 +48,43 @@ public class ProductsController {
 	 @RequestMapping(value = "/addtocart.do", method = RequestMethod.POST)
 	 public void addtocart(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		 HttpSession session = request.getSession();
+		 if(session.getAttribute("isLoggedin") == null) response.sendRedirect("/ShoppingCart/user.do");
+		 else {
 		 Integer userid = (Integer) session.getAttribute("userid");
 		 String productId = (String) session.getAttribute("productId");
 		 String category = (String) session.getAttribute("category");
+		 Product product = productTemplate.getProduct(productId, category);
+		 Integer quantity = 0;
+		 List<Product> cart = this.getCart(request, response);
+		 if(cart.contains(product)) {
+			 
+		 }
 		 productTemplate.addProduct(productId, category, userid);
 		 response.sendRedirect("html/cart.jsp");
+		 }
 	 }
 	 @ResponseBody
 	 @RequestMapping(value = "/getcart.do")
 	 public List<Product> getCart(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		 HttpSession session = request.getSession();
+		 List<Product> cart = new ArrayList<>();
+		 System.out.println(session.getAttribute("isLoggedin"));
+		 if(session.getAttribute("isLoggedin") == null) {
+			 response.sendRedirect("html/login.jsp");}
+		 else{
 		 User user = (User) session.getAttribute("user");
-		 List<Product> cart = productTemplate.getCart(user.getUserid());
 		 session.setAttribute("products",cart);
+		 cart.addAll(productTemplate.getCart(user.getUserid()));
+		 }
 		 return cart;
 //		 response.sendRedirect("html/cart.jsp");
 	 }
 	 @RequestMapping(value = "/deleteItem.do", method = RequestMethod.POST)
 	 public void deleteItem(@RequestParam String id,HttpServletRequest request,HttpServletResponse response) throws IOException {
 		 HttpSession session = request.getSession();
+		 if(session.getAttribute("isLoggedin") == null) response.sendRedirect("/user.do");
 		 User user = (User) session.getAttribute("user");
 		 productTemplate.removeItem(user.getUserid(), id);
-		 response.sendRedirect("html/cart.jsp");
+//		 response.sendRedirect("html/cart.jsp");
 	 }
 }
