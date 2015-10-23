@@ -46,13 +46,12 @@
 <body>
     <div class="header">
     <div class="container topbar">
-        <a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
+        <a href="Shoppingkart.jsp"><img src="/ShoppingCart/images/e-shop.png" height="80px"></a>
         <span id="site-title">Shopping Bee</span>
           <div id="cart">
               <span id="welcome"><a>Hello ${username}</a></span>
-              <span id="signin"><a href="login.jsp">Sign In</a></span>
               <span><a href="cart.jsp">MyCart</a></span>
-              <span id="logout"><a href="../logout">LogOut</a></span>
+              <span id="logout"><a href="/ShoppingCart/logout.do">LogOut</a></span>
           </div>
     </div>
     <div class = "container navmenu">

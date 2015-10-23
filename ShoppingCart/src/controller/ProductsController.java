@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import businesslogic.Category;
 import model.Product;
 import model.ProductJdbcTemplate;
 import model.User;
@@ -41,7 +42,7 @@ public class ProductsController {
 		 	JSONObject jsonProduct = new JSONObject(product);
 		 	HttpSession session = request.getSession();
 		 	session.setAttribute("productId", product.getProductId());
-		 	session.setAttribute("category", product.getCategory());
+		 	session.setAttribute("category", Integer.parseInt(product.getCategory()));
 		 	session.setAttribute("product", jsonProduct);
 		 	response.sendRedirect("html/product-description.jsp");
 	 }
@@ -52,14 +53,16 @@ public class ProductsController {
 		 else {
 		 Integer userid = (Integer) session.getAttribute("userid");
 		 String productId = (String) session.getAttribute("productId");
-		 String category = (String) session.getAttribute("category");
-		 Product product = productTemplate.getProduct(productId, category);
+		 Integer category = (Integer) session.getAttribute("category");
 		 Integer quantity = 0;
-		 List<Product> cart = this.getCart(request, response);
-		 if(cart.contains(product)) {
-			 
+		 quantity = productTemplate.getQuantity(productId, userid);
+		 if(quantity == 0)
+			 productTemplate.addProduct(productId, category, userid);
+		 else	{
+			 ++quantity;
+			 productTemplate.updateQuantity(quantity, productId, userid);
 		 }
-		 productTemplate.addProduct(productId, category, userid);
+			 
 		 response.sendRedirect("html/cart.jsp");
 		 }
 	 }
@@ -68,7 +71,6 @@ public class ProductsController {
 	 public List<Product> getCart(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		 HttpSession session = request.getSession();
 		 List<Product> cart = new ArrayList<>();
-		 System.out.println(session.getAttribute("isLoggedin"));
 		 if(session.getAttribute("isLoggedin") == null) {
 			 response.sendRedirect("html/login.jsp");}
 		 else{
@@ -86,5 +88,16 @@ public class ProductsController {
 		 User user = (User) session.getAttribute("user");
 		 productTemplate.removeItem(user.getUserid(), id);
 //		 response.sendRedirect("html/cart.jsp");
+	 }
+	 @RequestMapping(value="/updateQuantity.do", method = RequestMethod.POST)
+	 public void updateQuantity(@RequestParam String productId,@RequestParam Integer quantity,HttpServletRequest request,HttpServletResponse response) {
+		 HttpSession session = request.getSession();
+		 User user = (User) session.getAttribute("user");
+		 if(quantity == 0){
+			 productTemplate.removeItem(user.getUserid(), productId);
+		 }
+		 else {
+			 productTemplate.updateQuantity(quantity, productId, user.getUserid());
+		 }
 	 }
 }

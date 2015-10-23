@@ -17,13 +17,13 @@
 <body>
     <div class="header">
         <div class="container topbar">
-            <a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
+            <a href="Shoppingkart.jsp"><img src="/ShoppingCart/images/e-shop.png" height="80px"></a>
             <span id="site-title">Shopping Bee</span>
               <div id="cart">
                   <span id="welcome"><a>Hello ${username}</a></span>
-                  <span id="signin"><a href="login.jsp">Sign In</a></span>
+                  <span id="signin"><a href="/ShoppingCart/user.do">Sign In</a></span>
                   <span><a href="cart.jsp">MyCart</a></span>
-                  <span id="logout"><a href="../logout">LogOut</a></span>
+                  <span id="logout"><a href="/ShoppingCart/logout">LogOut</a></span>
               </div>
         </div>
         <div class = "container navmenu">
@@ -71,7 +71,7 @@
        //Adding filters to the pages
        var toAppend = '';
        $.ajax({
-		url:'../fetchproduct.do',
+		url:'/ShoppingCart/fetchproduct.do',
 		async : true,
 		data : {"category" : "books"},
 		success: function(books) {

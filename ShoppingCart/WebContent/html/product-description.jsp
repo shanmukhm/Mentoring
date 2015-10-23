@@ -17,8 +17,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
     <!-- Add the new slick-theme.css if you want the default styling -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/product_desc.css">
-    <link rel="stylesheet" type="text/css" href="../css/shopping-kart.css">
+    <link rel="stylesheet" type="text/css" href="/ShoppingCart/css/product_desc.css">
+    <link rel="stylesheet" type="text/css" href="/ShoppingCart/css/shopping-kart.css">
 </head>
 
 <body>
@@ -39,12 +39,12 @@
 %>
     <div class="header">
     <div class="container topbar">
-        <img src="../images/e-shop.png" height="80px">
+        <img src="/ShoppingCart/images/e-shop.png" height="80px">
         <span id="site-title">Shopping Bee</span>
           <div id="cart">
-              <span id="signin"><a href="login.jsp">Sign In</a></span>
+              <span id="signin"><a href="/ShoppingCart/login.do">Sign In</a></span>
               <span><a href="cart.jsp">MyCart</a></span>
-              <span id="logout"><a href="../logout">LogOut</a></span>
+              <span id="logout"><a href="/ShoppingCart/logout.do">LogOut</a></span>
           </div>
     </div>
     <div class = "container-fluid categories">
@@ -126,8 +126,8 @@
         </div>
    </div>
    <!-- Latest compiled and minified JavaScript -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="/ShoppingCart/js/jquery.min.js"></script>
+    <script src="/ShoppingCart/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/product_description.js"></script>
 </body>
 

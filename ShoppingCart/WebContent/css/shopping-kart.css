@@ -35,11 +35,14 @@
 }
 /*#33d685*/
 .login-input {
-	width: 35%;
+	width: 50%;
 }
 .categories{
 	padding:0px;
 	background-color: #E99523;
+}
+.login-container{
+	padding-top: 10px;
 }
 .imp-text {
 	font-size: 20px;

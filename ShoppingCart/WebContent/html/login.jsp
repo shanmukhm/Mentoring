@@ -26,11 +26,7 @@
   	<div class="container topbar">
   		<a href="/ShoppingCart/html/Shoppingkart.jsp"><img src="images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
-          <div id="cart">
-              <span id="signin"><a href="login.jsp">Sign In</a></span>
-              <span><a href="cart.jsp">MyCart</a></span>
-              <span id="logout"><a href="../logout">LogOut</a></span>
-          </div>
+         
   	</div>
   	 <div class = "container-fluid categories">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
@@ -42,23 +38,48 @@
             </ul>
     </div>
   </div>
-<div class="container">
-    <div><p class="text-primary imp-text">Enter your login details.</p></div>
-	<form:form method="POST" action="/ShoppingCart/login.do">
-  		<div class="form-group">
-    	<label for="name">User Name:</label>
-    	<form:input path="username" class="form-control login-input" id="name" name="name" required="required"/>
-  	</div>
-  		<div class="form-group">
-    	<label for="password">Password:</label>
-    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" required="required"/>
-  	</div>
-  		<div class="checkbox">
-    	<label><input type="checkbox"> Remember me</label>
-  	</div>
-  <div><p class="text-danger">${error}</p></div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form:form>
+<div class="container login-container">
+<div class="row">
+	<div class="col-sm-6">
+	    <div><p class="text-primary imp-text">Login</p></div>
+		<form:form method="POST" action="/ShoppingCart/login.do">
+	  		<div class="form-group">
+	    	<form:input path="username" class="form-control login-input" id="name" name="name" placeholder="Username" required="required"/>
+	  	</div>
+	  		<div class="form-group">
+	    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" placeholder="Password" required="required"/>
+	  	</div>
+	  		<div class="checkbox">
+	    	<label><input type="checkbox"> Remember me</label>
+	  	</div>
+	  <div><p class="text-danger">${error}</p></div>
+	  <button type="submit" class="btn btn-default">Login</button>
+	</form:form>
+	</div>
+	<div class="col-sm-6">
+		 <div><p class="text-primary imp-text">Register</p></div>
+		 <form:form method="POST" action="/ShoppingCart/register.do">
+		 	<div class="form-group">
+	    	<form:input path="username" class="form-control login-input" id="name" name="name" placeholder="Username" required="required"/>
+	  		</div>
+	  		<div class="form-group">
+	    	<form:input path="mobile" type="number" class="form-control login-input" id="mobile" name="mobile" placeholder="Mobile number" required="required"/>
+	  		</div>
+	  		<div class="form-group">
+	    	<form:input path="gender" type="text" class="form-control login-input" id="gender" name="gender" placeholder="Gender" required="required"/>
+	  		</div>
+	  		<div class="form-group">
+	    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" placeholder="Password" required="required"/>
+	  		</div>
+	  		<div class="checkbox">
+	    	<label><input type="checkbox"> I accept the terms & conditions.</label>
+	  		</div>
+	  		<div class="form-group">
+	  		<button type="submit" class="btn btn-default">Register</button>
+	  		</div>
+		 </form:form>
+	</div>
+	</div>
 </div>
 </body>
 </html>

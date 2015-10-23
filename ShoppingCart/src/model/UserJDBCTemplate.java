@@ -42,4 +42,8 @@ public class UserJDBCTemplate {
 	      List <User> users = userTemplate.query(SQL,userMapper);
 	      return users;
 	   }
+	public void addUser(User user) {
+		String sql = "INSERT INTO users(username,password,mobile,gender) values(?,?,?,?)";
+		userTemplate.update(sql,new Object[]{user.getUsername(),user.getPassword(),user.getMobile(),user.getGender()});
+	}
 }

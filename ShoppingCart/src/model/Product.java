@@ -12,6 +12,8 @@ public class Product {
 	private String brand;
 	private String pricerange;
 	private Integer quantity;
+	private String type;
+	private String language;
 	
 	public String getName() {
 		return name;
@@ -90,5 +92,17 @@ public class Product {
 		if(object instanceof Product && this.getProductId().equals(product.getProductId()))
 			equal = true;
 		return equal;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 }

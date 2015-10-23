@@ -5,25 +5,25 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Shopping Bee</title>
-    <link rel="stylesheet" href="../js/bootstrap.min.css">
+    <link rel="stylesheet" href="/ShoppingCart/js/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="../js/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/ShoppingCart/js/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
     <!-- Add the new slick-theme.css if you want the default styling -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick-theme.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" type="text/css" href="../css/shopping-kart.css">
+    <link rel="stylesheet" type="text/css" href="/ShoppingCart/css/shopping-kart.css">
 </head>
 <body>
 <div class="header">
   	<div class="container topbar">
-  		<a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
+  		<a href="Shoppingkart.jsp"><img src="/ShoppingCart/images/e-shop.png" height="80px"></a>
   		<span id="site-title">Shopping Bee</span>
           <div id="cart">
           	  <span id="welcome"><a>Hello ${username}</a></span>
-              <span id="signin"><a href="../user.do">Sign In</a></span>
+              <span id="signin"><a href="/ShoppingCart/user.do">Sign In</a></span>
               <span><a href="cart.jsp">MyCart</a></span>
-              <span id="logout"><a href="../logout.do">LogOut</a></span>
+              <span id="logout"><a href="/ShoppingCart/logout.do">LogOut</a></span>
           </div>
   	</div>
     <div class = "container navmenu">
@@ -71,9 +71,9 @@
             </div>
         </div>
     </div>
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="/ShoppingCart/js/jquery.min.js"></script>
+    <script src="/ShoppingCart/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
-    <script type="text/javascript" src="../js/shopping-bee.js"></script>
+    <script type="text/javascript" src="/ShoppingCart/js/shopping-bee.js"></script>
 </body>
 </html>

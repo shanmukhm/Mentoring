@@ -23,7 +23,6 @@ public class SignInDisplay {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		PrintWriter out = response.getWriter();
-		System.out.println(session.getAttribute("isLoggedin"));
 		if(session.getAttribute("isLoggedin")!= null)
 			out.println("yes");
 		else

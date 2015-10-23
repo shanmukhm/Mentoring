@@ -51,7 +51,12 @@ public class LoginController {
 		 }
 	      return view;
 	   }
-	
+	 @RequestMapping(value="/register.do", method = RequestMethod.POST)
+	 public void register(@ModelAttribute("user")User user,HttpServletResponse response) throws IOException{
+		 System.out.println(user.getGender());
+		 userTemplate.addUser(user);
+		 response.sendRedirect("/ShoppingCart/html/success.html");
+	 }
 	 @RequestMapping(value="/logout.do")
 	 	public void logout(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		 	HttpSession session = request.getSession();

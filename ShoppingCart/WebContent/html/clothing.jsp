@@ -17,13 +17,13 @@
 <body>
     <div class="header">
         <div class="container topbar">
-            <a href="Shoppingkart.jsp"><img src="../images/e-shop.png" height="80px"></a>
+            <a href="Shoppingkart.jsp"><img src="/ShoppingCart/images/e-shop.png" height="80px"></a>
             <span id="site-title">Shopping Bee</span>
               <div id="cart">
               	  <span id="welcome"><a>Hello ${username}</a></span>
-                  <span id = "signin"><a href="login.jsp">Sign In</a></span>
+                  <span id = "signin"><a href="/ShoppingCart/user.do">Sign In</a></span>
                   <span><a href="cart.jsp">MyCart</a></span>
-                  <span id="logout"><a href="../logout">LogOut</a></span>
+                  <span id="logout"><a href="/ShoppingCart/logout.do">LogOut</a></span>
               </div>
         </div>
         <div class = "container navmenu">
@@ -66,12 +66,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
-    <script type="text/javascript" src="../js/shopping-bee.js"></script>
+    <script type="text/javascript" src="/ShoppingCart/js/shopping-bee.js"></script>
     <script type="text/javascript">
        //Adding filters to the pages
        var toAppend = '';
        $.ajax({
-		url:'../fetchproduct.do',
+		url:'/ShoppingCart/fetchproduct.do',
 		async : true,
 		data : {"category" : "clothing"},
 		success: function(product) {

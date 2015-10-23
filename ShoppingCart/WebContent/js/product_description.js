@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$.ajax({
-		url: "../SignInDisplay.do", 
+		url: "/ShoppingCart/SignInDisplay.do", 
 		async:true, 
 		success: function(isLoggedin){
 			console.log(isLoggedin.trim());

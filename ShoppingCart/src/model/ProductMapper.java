@@ -11,6 +11,7 @@ public class ProductMapper implements RowMapper<Product>{
 	@Override
 	public Product mapRow(ResultSet rs,int rowNum) throws SQLException{
 		Product product = new Product();
+		String category = rs.getString("category");
 		product.setName(rs.getString("name"));
 		product.setImgsrc(rs.getString("imgsrc"));
 		product.setMrp(rs.getDouble("mrp"));
@@ -21,6 +22,12 @@ public class ProductMapper implements RowMapper<Product>{
 		product.setGender(rs.getString("gender"));
 		product.setBrand(rs.getString("brand"));
 		product.setPricerange(rs.getString("pricerange"));
+		if(category.equals("1")) {
+			product.setType(rs.getString("type"));
+		}
+		else if(category.equals("2")){
+			product.setLanguage(rs.getString("language"));
+		}
 		return product;
 	}
 }
