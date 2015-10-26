@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 
+import dao.UserJdbcTemplate;
 import model.User;
-import model.UserJDBCTemplate;
 
 @Component
 public class UserValidation {
 //	public static ApplicationContext context = 
 //            new ClassPathXmlApplicationContext("Beans.xml");
 	@Autowired
-	private UserJDBCTemplate userJDBCTemplate;
+	private UserJdbcTemplate userJDBCTemplate;
 	public Boolean validate(User user) {
 		Boolean isPresent = false;
 //	      UserJDBCTemplate userTemplate = 

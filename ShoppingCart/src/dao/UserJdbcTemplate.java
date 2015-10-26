@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import java.util.List;
 
@@ -9,8 +9,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import model.User;
+import model.UserMapper;
+
 @Component
-public class UserJDBCTemplate {
+public class UserJdbcTemplate {
 	@Autowired
 	private DataSource dataSource;
 	@Autowired

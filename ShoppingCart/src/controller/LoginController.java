@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import businesslogic.UserValidation;
+import dao.UserJdbcTemplate;
 import model.User;
-import model.UserJDBCTemplate;
 
 @Controller
 public class LoginController {
 	@Autowired
 	private UserValidation userValidation;
 	@Autowired
-	private UserJDBCTemplate userTemplate;
+	private UserJdbcTemplate userTemplate;
 	
 	 @RequestMapping(value = "/user.do", method = RequestMethod.GET)
 	   public ModelAndView user() {

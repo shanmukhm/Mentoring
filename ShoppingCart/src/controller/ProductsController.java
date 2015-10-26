@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import businesslogic.Category;
+import dao.ProductJdbcTemplate;
 import model.Product;
-import model.ProductJdbcTemplate;
 import model.User;
 
 @Controller

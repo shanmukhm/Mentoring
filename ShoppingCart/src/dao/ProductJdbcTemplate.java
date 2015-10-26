@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -11,6 +11,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import businesslogic.Category;
+import model.CartDetails;
+import model.CartMapper;
+import model.Product;
+import model.ProductMapper;
 
 import org.springframework.jdbc.core.RowMapper; 
 

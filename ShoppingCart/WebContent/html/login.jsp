@@ -80,7 +80,7 @@
 	  		<span class="error" id="error-pwd">This field can not be empty</span>
 	  		</div>
 	  		<div class="checkbox">
-	    	<label><input type="checkbox"> I accept the terms & conditions.</label>
+	    	<label><input type="checkbox" required="required"> I accept the terms & conditions.</label>
 	  		</div>
 	  		<div class="form-group">
 	  		<button type="submit" class="btn btn-default" id="submit">Register</button>
