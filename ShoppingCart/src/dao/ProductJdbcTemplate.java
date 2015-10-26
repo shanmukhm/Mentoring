@@ -1,6 +1,5 @@
 package dao;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +13,7 @@ import businesslogic.Category;
 import model.CartDetails;
 import model.CartMapper;
 import model.Product;
-import model.ProductMapper;
-
-import org.springframework.jdbc.core.RowMapper; 
+import model.ProductMapper; 
 
 @Component
 public class ProductJdbcTemplate {
