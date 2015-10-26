@@ -56,30 +56,39 @@
 	  <button type="submit" class="btn btn-default">Login</button>
 	</form:form>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-6" id="register">
 		 <div><p class="text-primary imp-text">Register</p></div>
 		 <form:form method="POST" action="/ShoppingCart/register.do">
 		 	<div class="form-group">
 	    	<form:input path="username" class="form-control login-input" id="name" name="name" placeholder="Username" required="required"/>
+	    	<span class="error" id="error-name">This field can not be empty</span>
 	  		</div>
 	  		<div class="form-group">
 	    	<form:input path="mobile" type="number" class="form-control login-input" id="mobile" name="mobile" placeholder="Mobile number" required="required"/>
+	  		<span class="error" id="error-mobile">This field can not be empty</span>
+	  		<span class="error" id="error2-mobile">Should be 10 numbers</span>
 	  		</div>
 	  		<div class="form-group">
-	    	<form:input path="gender" type="text" class="form-control login-input" id="gender" name="gender" placeholder="Gender" required="required"/>
+	  		<br>
+	  		<label for="male">Male</label>
+	    	<form:radiobutton path="gender" id="male" name="gender" value="male" required="required"/>
+	    	<label for="female">Female</label>
+	    	<form:radiobutton path="gender" id="female" name="gender" value="female" required="required"/>
 	  		</div>
 	  		<div class="form-group">
 	    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" placeholder="Password" required="required"/>
+	  		<span class="error" id="error-pwd">This field can not be empty</span>
 	  		</div>
 	  		<div class="checkbox">
 	    	<label><input type="checkbox"> I accept the terms & conditions.</label>
 	  		</div>
 	  		<div class="form-group">
-	  		<button type="submit" class="btn btn-default">Register</button>
+	  		<button type="submit" class="btn btn-default" id="submit">Register</button>
 	  		</div>
 		 </form:form>
 	</div>
 	</div>
 </div>
+<script type="text/javascript" src="/ShoppingCart/js//login.js"></script>
 </body>
 </html>
