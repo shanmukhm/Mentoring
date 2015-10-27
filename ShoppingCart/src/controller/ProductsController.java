@@ -49,21 +49,21 @@ public class ProductsController {
 	 @RequestMapping(value = "/addtocart.do", method = RequestMethod.POST)
 	 public void addtocart(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		 HttpSession session = request.getSession();
-		 if(session.getAttribute("isLoggedin") == null) response.sendRedirect("/ShoppingCart/user.do");
+		 if(session.getAttribute("isLoggedin") == null) 
+			 response.sendRedirect("/ShoppingCart/user.do");
 		 else {
-		 Integer userid = (Integer) session.getAttribute("userid");
-		 String productId = (String) session.getAttribute("productId");
-		 Integer category = (Integer) session.getAttribute("category");
-		 Integer quantity = 0;
-		 quantity = productTemplate.getQuantity(productId, userid);
-		 if(quantity == 0)
-			 productTemplate.addProduct(productId, category, userid);
-		 else	{
-			 ++quantity;
-			 productTemplate.updateQuantity(quantity, productId, userid);
-		 }
-			 
-		 response.sendRedirect("html/cart.jsp");
+			 Integer userid = (Integer) session.getAttribute("userid");
+			 String productId = (String) session.getAttribute("productId");
+			 Integer category = (Integer) session.getAttribute("category");
+			 Integer quantity = 0;
+			 quantity = productTemplate.getQuantity(productId, userid);
+			 if(quantity == 0)
+				 productTemplate.addProduct(productId, category, userid);
+			 else	{
+				 ++quantity;
+				 productTemplate.updateQuantity(quantity, productId, userid);
+			 }	 
+			 response.sendRedirect("html/cart.jsp");
 		 }
 	 }
 	 @ResponseBody
@@ -72,12 +72,12 @@ public class ProductsController {
 		 HttpSession session = request.getSession();
 		 List<Product> cart = new ArrayList<>();
 		 if(session.getAttribute("isLoggedin") == null) {
-			 response.sendRedirect("html/login.jsp");}
+			 response.sendRedirect("/ShoppingCart/user.do");}
 		 else{
-		 User user = (User) session.getAttribute("user");
-		 session.setAttribute("products",cart);
-		 cart.addAll(productTemplate.getCart(user.getUserid()));
-		 }
+			 User user = (User) session.getAttribute("user");
+			 session.setAttribute("products",cart);
+			 cart.addAll(productTemplate.getCart(user.getUserid()));
+			 }
 		 return cart;
 //		 response.sendRedirect("html/cart.jsp");
 	 }

@@ -21,12 +21,22 @@ public class UserValidation {
 		Boolean isPresent = false;
 //	      UserJDBCTemplate userTemplate = 
 //	      (UserJDBCTemplate)context.getBean("userJDBCTemplate");
-	      List<User> users = userJDBCTemplate.listUsers();
-	      for(User u: users){
-	    	  if(u.getUsername().equals(user.getUsername()) && u.getPassword().equals(user.getPassword()))
-	    		  isPresent = true;
-	      }
+	      List<User> users = userJDBCTemplate.validateUser(user.getUsername(), user.getPassword());
+	      if(!users.isEmpty())
+	    	  isPresent = true;
 	      return isPresent;
+	}
+	public String checkRegistration(String username,String mobile){
+		String result = "nothing";
+		List<User> users = userJDBCTemplate.checkUsername(username);
+	      if(!users.isEmpty())
+	    	  result = "name";
+	      List<User> users2 = userJDBCTemplate.checkMobile(mobile);
+	      if(!users2.isEmpty())
+	    	  result = "mobile";
+	      if(!users.isEmpty()&&!users2.isEmpty())
+	    	  result = "both";
+	      return result;
 	}
 	
 }

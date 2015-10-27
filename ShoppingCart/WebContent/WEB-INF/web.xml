@@ -22,7 +22,7 @@
       WEB-INF/shopping-bee-servlet.xml
     </param-value>
 </context-param>
-<listener>
+ <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-</listener>
+</listener> 
 </web-app>

@@ -20,7 +20,7 @@
 	if(session.getAttribute("username") != null){
 		response.sendRedirect("Shoppingkart.jsp");
 	}
-	model.User command = new model.User();
+	
 %>
 <div class="header">
   	<div class="container topbar">
@@ -44,15 +44,15 @@
 	    <div><p class="text-primary imp-text">Login</p></div>
 		<form:form method="POST" action="/ShoppingCart/login.do">
 	  		<div class="form-group">
-	    	<form:input path="username" class="form-control login-input" id="name" name="name" placeholder="Username" required="required"/>
+	    	<form:input path="username" class="form-control login-input" id="username" name="name" placeholder="Username" required="required"/>
 	  	</div>
 	  		<div class="form-group">
-	    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" placeholder="Password" required="required"/>
+	    	<form:input path="password" type="password" class="form-control login-input" id="loginpwd" name="password" placeholder="Password" required="required"/>
 	  	</div>
 	  		<div class="checkbox">
 	    	<label><input type="checkbox"> Remember me</label>
 	  	</div>
-	  <div><p class="text-danger">${error}</p></div>
+	  <div><p class="error">${error}</p></div>
 	  <button type="submit" class="btn btn-default">Login</button>
 	</form:form>
 	</div>
@@ -62,11 +62,13 @@
 		 	<div class="form-group">
 	    	<form:input path="username" class="form-control login-input" id="name" name="name" placeholder="Username" required="required"/>
 	    	<span class="error" id="error-name">This field can not be empty</span>
+	    	<span class="error" id="error3-name">username already exists</span>
 	  		</div>
 	  		<div class="form-group">
 	    	<form:input path="mobile" type="number" class="form-control login-input" id="mobile" name="mobile" placeholder="Mobile number" required="required"/>
 	  		<span class="error" id="error-mobile">This field can not be empty</span>
 	  		<span class="error" id="error2-mobile">Should be 10 numbers</span>
+	  		<span class="error" id="error3-mobile">mobile number already exists</span>
 	  		</div>
 	  		<div class="form-group">
 	  		<br>

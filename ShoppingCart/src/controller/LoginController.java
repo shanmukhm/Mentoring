@@ -12,6 +12,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import businesslogic.UserValidation;
@@ -30,13 +32,13 @@ public class LoginController {
 	      return new ModelAndView("login", "command", new User());
 	   }
 	 @RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	   public String addUser(@ModelAttribute("user")User user, 
+	   public String addUser(@ModelAttribute("command")User user, 
 	   ModelMap model,HttpServletResponse response,HttpServletRequest request) throws IOException {
 		 String view = null;
 		 if(userValidation.validate(user)){
 			 HttpSession session = request.getSession();
-			 User userObject = userTemplate.getUser(user.getUsername());
-			 session.setAttribute("username", userObject.getUsername());
+			 User userObject = userTemplate.getUser(user.getUsername().toLowerCase());
+			 session.setAttribute("username", userObject.getUsername().toUpperCase());
 			 session.setAttribute("userid", userObject.getUserid());
 			 session.setAttribute("isLoggedin", "true");
 			 session.setAttribute("error", "");
@@ -62,6 +64,11 @@ public class LoginController {
 		 	HttpSession session = request.getSession();
 			session.invalidate();
 			response.sendRedirect("html/Logout.html");
+	 }
+	 @ResponseBody
+	 @RequestMapping(value="/checkUsers.do")
+	 public String checkUsers(@RequestParam String username,@RequestParam String mobile,HttpServletRequest request){
+		 return userValidation.checkRegistration(username.toLowerCase(), mobile);
 	 }
 }
 

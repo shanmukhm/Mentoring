@@ -35,4 +35,35 @@ $(document).ready(function(){
 		else
 			$('#submit').prop('disabled', true);
 	});
+	$("#name,#mobile").focusout(function(){
+		var name = $('#name').val();
+		var mobile = $('#mobile').val();
+		var id = $(this).attr('id');
+		$.ajax({
+			url:"/ShoppingCart/checkUsers.do",
+			type: "get",
+			data: {"username":name,"mobile":mobile},
+			success: function(response){
+				if(response.trim() == "name"){
+					$("#error-"+id).hide();
+					$("#error3-mobile").hide();
+					$("#error3-"+id).show();
+				}
+				else if(response.trim() == "mobile"){
+					$("#error-"+id).hide();
+					$("#error2-"+id).hide();
+					$("#error3-name").hide();
+					$("#error3-"+id).show();
+				}
+				else if(response.trim() == "both"){
+					$("#error3-name").show();
+					$("#error3-mobile").show();
+				}
+				else {
+					$("#error3-name").hide();
+					$("#error3-mobile").hide();
+				}
+			}
+		});
+	});
 });
