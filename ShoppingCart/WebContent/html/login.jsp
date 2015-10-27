@@ -81,6 +81,11 @@
 	    	<form:input path="password" type="password" class="form-control login-input" id="pwd" name="password" placeholder="Password" required="required"/>
 	  		<span class="error" id="error-pwd">This field can not be empty</span>
 	  		</div>
+	  		<div class="form-group">
+	    	<form:input path="password2" type="password" class="form-control login-input" id="pwd2" name="password2" placeholder="Confirm password" required="required"/>
+	  		<span class="error" id="error-pwd2">This field can not be empty</span>
+	  		<span class="error" id="error2-pwd2">Passwords do not match</span>
+	  		</div>
 	  		<div class="checkbox">
 	    	<label><input type="checkbox" required="required"> I accept the terms & conditions.</label>
 	  		</div>

@@ -4,6 +4,7 @@ public class User {
 	private Integer userid;
 	private String username;
 	private String password;
+	private String password2;
 	private String mobile;
 	private String gender;
 	
@@ -45,5 +46,13 @@ public class User {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public String getPassword2() {
+		return password2;
+	}
+
+	public void setPassword2(String password2) {
+		this.password2 = password2;
 	}
 }

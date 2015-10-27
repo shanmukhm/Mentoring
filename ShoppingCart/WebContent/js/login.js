@@ -66,4 +66,10 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$("#pwd2").keyup(function(){
+		if($(this).val() != $("#pwd").val())
+			$("#error2-pwd2").show();
+		else
+			$("#error2-pwd2").hide();
+	});
 });

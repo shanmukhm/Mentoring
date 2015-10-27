@@ -22,34 +22,20 @@
 </head>
 
 <body>
-<%
- //String tableName = request.getParameter("table");
- //String productId = request.getParameter("id");
- //Class.forName("com.mysql.jdbc.Driver");
-	//Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/products","root","11me10050");
-	//String query = "select * from " + tableName + " where productId = '"+productId+"'" ;
-	//Statement state = connection.createStatement();
-	//ResultSet rs = state.executeQuery(query);
-	//rs.next();
-	//String gender = null;
-	//try{ gender= rs.getString("gender");}
-	//catch(SQLException ex){
-	 // gender = "All";
-	//}
-%>
     <div class="header">
-    <div class="container topbar">
-        <img src="/ShoppingCart/images/e-shop.png" height="80px">
-        <span id="site-title">Shopping Bee</span>
+  	<div class="container topbar">
+  		<a href="Shoppingkart.jsp"><img src="/ShoppingCart/images/e-shop.png" height="80px"></a>
+  		<span id="site-title">Shopping Bee</span>
           <div id="cart">
-              <span id="signin"><a href="/ShoppingCart/login.do">Sign In</a></span>
+          	  <span id="welcome"><a>Hello ${username}</a></span>
+              <span id="signin"><a href="/ShoppingCart/user.do">Sign In</a></span>
               <span><a href="cart.jsp">MyCart</a></span>
               <span id="logout"><a href="/ShoppingCart/logout.do">LogOut</a></span>
           </div>
-    </div>
-    <div class = "container-fluid categories">
+  	</div>
+    <div class = "container navmenu">
         <ul class="main-navbar nav nav-pills nav-justified" id="pills-first">
-              <li role="presentation"><a href="Shoppingkart.jsp">Home</a></li>
+              <li role="presentation" class="active"><a href="Shoppingkart.jsp">Home</a></li>
               <li role="presentation"><a href="electronics.jsp">Electronics</a></li>
               <li role="presentation"><a href="books.jsp">Books</a></li>
               <li role="presentation"><a href="clothing.jsp">Clothing</a></li>
@@ -128,7 +114,7 @@
    <!-- Latest compiled and minified JavaScript -->
     <script src="/ShoppingCart/js/jquery.min.js"></script>
     <script src="/ShoppingCart/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/product_description.js"></script>
+    <script type="text/javascript" src="/ShoppingCart/js/product_description.js"></script>
 </body>
 
 </html>
