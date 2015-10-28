@@ -11,9 +11,7 @@ import org.springframework.stereotype.Component;
 
 import businesslogic.Category;
 import model.CartDetails;
-import model.CartMapper;
-import model.Product;
-import model.ProductMapper; 
+import model.Product; 
 
 @Component
 public class ProductJdbcTemplate {

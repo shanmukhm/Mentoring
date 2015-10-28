@@ -458,7 +458,7 @@ var books = {
 };
 $(document).ready(function(){
 	$.ajax({
-		url: "../SignInDisplay.do", 
+		url: "/ShoppingCart/SignInDisplay.do", 
 		async:true, 
 		success: function(isLoggedin){
 			if(isLoggedin.trim() === "yes"){

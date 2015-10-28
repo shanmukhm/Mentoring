@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import model.User;
-import model.UserMapper;
 
 @Component
 public class UserJdbcTemplate {
